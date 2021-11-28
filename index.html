@@ -30,13 +30,12 @@
         }
         100% {
           opacity: 1;
-          color: #fff000;
           transform: translate3d(-50%, 0%, 0);
         }
       }
 
       h1 {
-        color: #ffff00;
+        color: transparent;
         position: absolute;
         top: 80%;
         left: 50%;
@@ -58,8 +57,14 @@
       }
 
       h1:hover {
-        color: #fff000;
-        /* -webkit-text-stroke-width: 0px; */
+        color: #ffff00;
+
+        /* -webkit-text-stroke-width: 3px; */
+      }
+
+      h1:hover + img {
+        animation: jeby 0.2s ease-in-out;
+        animation-iteration-count: infinite;
       }
 
       #snegl {
@@ -73,77 +78,47 @@
         transform: rotate3d(30%, 0, 0);
       }
 
-      .pronounce {
-        color: #ffffff;
-        font-family: 'Arial', sans-serif;
-        font-weight: 400;
-        text-transform: uppercase;
-        font-size: 72px;
-        margin: 0 12px;
-      }
-
-      .pronounce::after {
-        font-size: 22px;
-        margin-left: 12px;
-      }
-
-      @keyframes marquee {
-        0% {
-          transform: translate3d(-50%, 0, 0);
-        }
-        100% {
-          transform: translate3d(100%, 0, 0);
-        }
-      }
-
-      .marquee-container {
-        display: flex;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        color: #ffffff;
-      }
-
-      .marquee-og {
-        display: flex;
-        animation: marquee 10s linear;
-        animation-iteration-count: infinite;
-      }
-
-      .marquee-copy {
-        display: flex;
-        animation: marquee 10s linear;
-        animation-iteration-count: infinite;
-        padding-left: 100%;
-      }
-
-      .image-holder {
-        height: 50vw;
-        width: 50vw;
-        border-radius: 50%;
-      }
-
       img {
         height: 50vw;
         width: 50vw;
         border-radius: 50%;
         object-fit: cover;
-        transform: scale(10);
-        transition: all 0.3s ease-in-out;
+        transform: scale(15);
+        transition: all 0.3s ease-in;
         cursor: crosshair;
+        animation: loadAnim 6s linear;
         animation-iteration-count: infinite;
       }
 
-      img:hover {
-        animation: jeby 0.2s ease-in-out;
-        animation-iteration-count: infinite;
+      @keyframes loadAnim {
+        0% {
+          transform: scale(10.1);
+        }
+
+        25% {
+          transform: scale(9.7);
+        }
+
+        50% {
+          transform: scale(9.8);
+        }
+
+        75% {
+          transform: scale(10);
+        }
+
+        90% {
+          transform: scale(10.1);
+        }
+
+        100% {
+          transform: scale(10.2);
+        }
       }
 
       @keyframes jeby {
         0% {
-          transform: scale(10) rotate(10deg);
+          transform: scale(10) rotate(3deg);
         }
         20% {
           transform: scale(10.5);
@@ -152,7 +127,7 @@
           transform: scale(10.5);
         }
         40% {
-          transform: scale(1.5) rotate(20deg);
+          transform: scale(1.5) rotate(10deg);
         }
 
         50% {
@@ -180,12 +155,10 @@
   </head>
 
   <body>
+    <h1>Jumbosnegl</h1>
     <img
       src="https://static.gogift.io/cms/images/491731351e430f856a48c191796f2b23/source.jpg"
     />
-
-    <h1><span>Jumbo</span><span>snegl</span></h1>
-
     <div class="marquee-container"></div>
   </body>
 </html>
