@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+        background-color: #000000;
+
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        cursor: crosshair;
+      }
+
+      @keyframes slideIn {
+        0% {
+          opacity: 0;
+          color: 50%;
+          transform: translate3d(-50%, 20%, 0);
+        }
+        100% {
+          opacity: 1;
+          color: #fff000;
+          transform: translate3d(-50%, 0%, 0);
+        }
+      }
+
+      h1 {
+        color: #ffff00;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        font-size: 140px;
+        text-transform: uppercase;
+
+        transform: translate3d(-50%, 0, 0);
+        z-index: 1200;
+        font-family: 'Arial Black', 'Arial Narrow', Arial, sans-serif;
+        -webkit-text-stroke-width: 2.5px;
+        -webkit-text-stroke-color: #fff000;
+        text-align: left;
+        line-height: 180px;
+
+        transition: color 0.1s ease-in-out;
+        animation: slideIn 0.8s ease-in-out;
+        animation-delay: 0.75;
+        cursor: crosshair;
+      }
+
+      h1:hover {
+        color: #fff000;
+        /* -webkit-text-stroke-width: 0px; */
+      }
+
+      #snegl {
+        font-size: 190px;
+        position: absolute;
+        top: 12%;
+        z-index: 4000;
+      }
+
+      h1 > span:nth-of-type(2) {
+        transform: rotate3d(30%, 0, 0);
+      }
+
+      .pronounce {
+        color: #ffffff;
+        font-family: 'Arial', sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 72px;
+        margin: 0 12px;
+      }
+
+      .pronounce::after {
+        font-size: 22px;
+        margin-left: 12px;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translate3d(-50%, 0, 0);
+        }
+        100% {
+          transform: translate3d(100%, 0, 0);
+        }
+      }
+
+      .marquee-container {
+        display: flex;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: #ffffff;
+      }
+
+      .marquee-og {
+        display: flex;
+        animation: marquee 10s linear;
+        animation-iteration-count: infinite;
+      }
+
+      .marquee-copy {
+        display: flex;
+        animation: marquee 10s linear;
+        animation-iteration-count: infinite;
+        padding-left: 100%;
+      }
+
+      .image-holder {
+        height: 50vw;
+        width: 50vw;
+        border-radius: 50%;
+      }
+
+      img {
+        height: 50vw;
+        width: 50vw;
+        border-radius: 50%;
+        object-fit: cover;
+        transform: scale(10);
+        transition: all 0.3s ease-in-out;
+        cursor: crosshair;
+        animation-iteration-count: infinite;
+      }
+
+      img:hover {
+        animation: jeby 0.2s ease-in-out;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes jeby {
+        0% {
+          transform: scale(10) rotate(10deg);
+        }
+        20% {
+          transform: scale(10.5);
+        }
+        30% {
+          transform: scale(10.5);
+        }
+        40% {
+          transform: scale(1.5) rotate(20deg);
+        }
+
+        50% {
+          transform: scale(1);
+        }
+        60% {
+          transform: scale(35);
+        }
+        70% {
+          transform: scale(10.5) rotate(30deg);
+        }
+        80% {
+          transform: scale(1.5);
+        }
+
+        90% {
+          transform: scale(1.5);
+        }
+
+        100% {
+          transform: scale(1.1) rotate(30deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <img
+      src="https://static.gogift.io/cms/images/491731351e430f856a48c191796f2b23/source.jpg"
+    />
+
+    <h1><span>Jumbo</span><span>snegl</span></h1>
+
+    <div class="marquee-container"></div>
+  </body>
+</html>
