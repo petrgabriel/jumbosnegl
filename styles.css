@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #000000;
+
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  z-index: 400;
+}
+
+nav {
+  width: 100%;
+}
+
+nav a {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    color: 50%;
+    transform: translate3d(-50%, 20%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, 0%, 0);
+  }
+}
+
+h1 {
+  color: transparent;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  font-size: 140px;
+  text-transform: uppercase;
+
+  transform: translate3d(-50%, 0, 0);
+  z-index: 1200;
+  font-family: 'Arial Black', 'Arial Narrow', Arial, sans-serif;
+  -webkit-text-stroke-width: 2.5px;
+  -webkit-text-stroke-color: #fff000;
+  text-align: left;
+  line-height: 180px;
+
+  transition: color 0.1s ease-in-out;
+  animation: slideIn 0.8s ease-in-out;
+  animation-delay: 0.75;
+  cursor: crosshair;
+}
+
+h1:hover {
+  color: #ffff00;
+
+  /* -webkit-text-stroke-width: 3px; */
+}
+
+h1:hover + img {
+  animation: jeby 0.2s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+#snegl {
+  font-size: 190px;
+  position: absolute;
+  top: 12%;
+  z-index: 4000;
+}
+
+h1 > span:nth-of-type(2) {
+  transform: rotate3d(30%, 0, 0);
+}
+
+img {
+  height: 50vw;
+  width: 50vw;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(15);
+  transition: all 0.3s ease-in;
+  cursor: crosshair;
+  animation: loadAnim 6s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loadAnim {
+  0% {
+    transform: scale(10.1);
+  }
+
+  25% {
+    transform: scale(9.7);
+  }
+
+  50% {
+    transform: scale(9.8);
+  }
+
+  75% {
+    transform: scale(10);
+  }
+
+  90% {
+    transform: scale(10.1);
+  }
+
+  100% {
+    transform: scale(10.2);
+  }
+}
+
+@keyframes jeby {
+  0% {
+    transform: scale(10) rotate(3deg);
+  }
+  20% {
+    transform: scale(10.5);
+  }
+  30% {
+    transform: scale(10.5);
+  }
+  40% {
+    transform: scale(1.5) rotate(10deg);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(35);
+  }
+  70% {
+    transform: scale(10.5) rotate(30deg);
+  }
+  80% {
+    transform: scale(1.5);
+  }
+
+  90% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1.1) rotate(30deg);
+  }
+}
